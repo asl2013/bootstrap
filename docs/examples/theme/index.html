@@ -86,7 +86,16 @@
         <button type="button" class="btn btn-lg btn-success">Success</button>
         <button type="button" class="btn btn-lg btn-info">Info</button>
         <button type="button" class="btn btn-lg btn-warning">Warning</button>
-        <button type="button" class="btn btn-lg btn-danger">Danger</button>
+        <button type="button" class="btn btn-lg btn-danger btn-rounded">Danger</button>
+        <button type="button" class="btn btn-lg btn-link">Link</button>
+      </p>
+      <p>
+        <button type="button" class="btn btn-lg btn-outline-default">Default</button>
+        <button type="button" class="btn btn-lg btn-outline-primary">Primary</button>
+        <button type="button" class="btn btn-lg btn-outline-success">Success</button>
+        <button type="button" class="btn btn-lg btn-outline-info">Info</button>
+        <button type="button" class="btn btn-lg btn-outline-warning">Warning</button>
+        <button type="button" class="btn btn-lg btn-outline-danger btn-rounded">Danger</button>
         <button type="button" class="btn btn-lg btn-link">Link</button>
       </p>
       <p>
@@ -95,7 +104,16 @@
         <button type="button" class="btn btn-success">Success</button>
         <button type="button" class="btn btn-info">Info</button>
         <button type="button" class="btn btn-warning">Warning</button>
-        <button type="button" class="btn btn-danger">Danger</button>
+        <button type="button" class="btn btn-danger btn-rounded">Danger</button>
+        <button type="button" class="btn btn-link">Link</button>
+      </p>
+      <p>
+        <button type="button" class="btn btn-outline-default">Default</button>
+        <button type="button" class="btn btn-outline-primary">Primary</button>
+        <button type="button" class="btn btn-outline-success">Success</button>
+        <button type="button" class="btn btn-outline-info">Info</button>
+        <button type="button" class="btn btn-outline-warning">Warning</button>
+        <button type="button" class="btn btn-outline-danger btn-rounded">Danger</button>
         <button type="button" class="btn btn-link">Link</button>
       </p>
       <p>
@@ -104,7 +122,16 @@
         <button type="button" class="btn btn-sm btn-success">Success</button>
         <button type="button" class="btn btn-sm btn-info">Info</button>
         <button type="button" class="btn btn-sm btn-warning">Warning</button>
-        <button type="button" class="btn btn-sm btn-danger">Danger</button>
+        <button type="button" class="btn btn-sm btn-danger btn-rounded">Danger</button>
+        <button type="button" class="btn btn-sm btn-link">Link</button>
+      </p>
+      <p>
+        <button type="button" class="btn btn-sm btn-outline-default">Default</button>
+        <button type="button" class="btn btn-sm btn-outline-primary">Primary</button>
+        <button type="button" class="btn btn-sm btn-outline-success">Success</button>
+        <button type="button" class="btn btn-sm btn-outline-info">Info</button>
+        <button type="button" class="btn btn-sm btn-outline-warning">Warning</button>
+        <button type="button" class="btn btn-sm btn-outline-danger btn-rounded">Danger</button>
         <button type="button" class="btn btn-sm btn-link">Link</button>
       </p>
       <p>
@@ -113,10 +140,18 @@
         <button type="button" class="btn btn-xs btn-success">Success</button>
         <button type="button" class="btn btn-xs btn-info">Info</button>
         <button type="button" class="btn btn-xs btn-warning">Warning</button>
-        <button type="button" class="btn btn-xs btn-danger">Danger</button>
+        <button type="button" class="btn btn-xs btn-danger btn-rounded">Danger</button>
         <button type="button" class="btn btn-xs btn-link">Link</button>
       </p>
-
+      <p>
+        <button type="button" class="btn btn-xs btn-outline-default">Default</button>
+        <button type="button" class="btn btn-xs btn-outline-primary">Primary</button>
+        <button type="button" class="btn btn-xs btn-outline-success">Success</button>
+        <button type="button" class="btn btn-xs btn-outline-info">Info</button>
+        <button type="button" class="btn btn-xs btn-outline-warning">Warning</button>
+        <button type="button" class="btn btn-xs btn-outline-danger btn-rounded">Danger</button>
+        <button type="button" class="btn btn-xs btn-link">Link</button>
+      </p>
 
       <div class="page-header">
         <h1>Tables</h1>
@@ -190,13 +225,13 @@
 
       <div class="row">
         <div class="col-md-6">
-          <table class="table table-bordered">
+          <table class="table table-bordered table-headbg table-danger">
             <thead>
               <tr>
                 <th>#</th>
-                <th>First Name</th>
-                <th>Last Name</th>
-                <th>Username</th>
+                <th class="clickable">First Name</th>
+                <th class="clickable">Last Name</th>
+                <th class="clickable">Username</th>
               </tr>
             </thead>
             <tbody>
@@ -362,7 +397,20 @@
         <li role="presentation"><a href="#">Profile</a></li>
         <li role="presentation"><a href="#">Messages</a></li>
       </ul>
+      <br>
       <ul class="nav nav-pills" role="tablist">
+        <li role="presentation" class="active"><a href="#">Home</a></li>
+        <li role="presentation"><a href="#">Profile</a></li>
+        <li role="presentation"><a href="#">Messages</a></li>
+      </ul>
+      <br>
+      <ul class="nav nav-border" role="tablist">
+        <li role="presentation" class="active"><a href="#">Home</a></li>
+        <li role="presentation"><a href="#">Profile</a></li>
+        <li role="presentation"><a href="#">Messages</a></li>
+      </ul>
+      <br>
+      <ul class="nav nav-border nav-stacked" role="tablist">
         <li role="presentation" class="active"><a href="#">Home</a></li>
         <li role="presentation"><a href="#">Profile</a></li>
         <li role="presentation"><a href="#">Messages</a></li>
@@ -541,7 +589,55 @@
               Panel content
             </div>
           </div>
+          <div class="panel panel-default panel-dark">
+            <div class="panel-heading">
+              <h3 class="panel-title">Panel title</h3>
+            </div>
+            <div class="panel-body">
+              Panel content
+            </div>
+          </div>
+          <div class="panel panel-border-default">
+            <div class="panel-heading">
+              <h3 class="panel-title">Panel title</h3>
+            </div>
+            <div class="panel-body">
+              Panel content
+            </div>
+          </div>
+          <div class="panel panel-border-default panel-dark">
+            <div class="panel-heading">
+              <h3 class="panel-title">Panel title</h3>
+            </div>
+            <div class="panel-body">
+              Panel content
+            </div>
+          </div>
           <div class="panel panel-primary">
+            <div class="panel-heading">
+              <h3 class="panel-title">Panel title</h3>
+            </div>
+            <div class="panel-body">
+              Panel content
+            </div>
+          </div>
+          <div class="panel panel-primary panel-dark">
+            <div class="panel-heading">
+              <h3 class="panel-title">Panel title</h3>
+            </div>
+            <div class="panel-body">
+              Panel content
+            </div>
+          </div>
+          <div class="panel panel-border-primary">
+            <div class="panel-heading">
+              <h3 class="panel-title">Panel title</h3>
+            </div>
+            <div class="panel-body">
+              Panel content
+            </div>
+          </div>
+          <div class="panel panel-border-primary panel-dark">
             <div class="panel-heading">
               <h3 class="panel-title">Panel title</h3>
             </div>
@@ -559,7 +655,55 @@
               Panel content
             </div>
           </div>
+          <div class="panel panel-success panel-dark">
+            <div class="panel-heading">
+              <h3 class="panel-title">Panel title</h3>
+            </div>
+            <div class="panel-body">
+              Panel content
+            </div>
+          </div>
+          <div class="panel panel-border-success">
+            <div class="panel-heading">
+              <h3 class="panel-title">Panel title</h3>
+            </div>
+            <div class="panel-body">
+              Panel content
+            </div>
+          </div>
+          <div class="panel panel-border-success panel-dark">
+            <div class="panel-heading">
+              <h3 class="panel-title">Panel title</h3>
+            </div>
+            <div class="panel-body">
+              Panel content
+            </div>
+          </div>
           <div class="panel panel-info">
+            <div class="panel-heading">
+              <h3 class="panel-title">Panel title</h3>
+            </div>
+            <div class="panel-body">
+              Panel content
+            </div>
+          </div>
+          <div class="panel panel-info panel-dark">
+            <div class="panel-heading">
+              <h3 class="panel-title">Panel title</h3>
+            </div>
+            <div class="panel-body">
+              Panel content
+            </div>
+          </div>
+          <div class="panel panel-border-info">
+            <div class="panel-heading">
+              <h3 class="panel-title">Panel title</h3>
+            </div>
+            <div class="panel-body">
+              Panel content
+            </div>
+          </div>
+          <div class="panel panel-border-info panel-dark">
             <div class="panel-heading">
               <h3 class="panel-title">Panel title</h3>
             </div>
@@ -577,7 +721,55 @@
               Panel content
             </div>
           </div>
+          <div class="panel panel-warning panel-dark">
+            <div class="panel-heading">
+              <h3 class="panel-title">Panel title</h3>
+            </div>
+            <div class="panel-body">
+              Panel content
+            </div>
+          </div>
+          <div class="panel panel-border-warning">
+            <div class="panel-heading">
+              <h3 class="panel-title">Panel title</h3>
+            </div>
+            <div class="panel-body">
+              Panel content
+            </div>
+          </div>
+          <div class="panel panel-border-warning panel-dark">
+            <div class="panel-heading">
+              <h3 class="panel-title">Panel title</h3>
+            </div>
+            <div class="panel-body">
+              Panel content
+            </div>
+          </div>
           <div class="panel panel-danger">
+            <div class="panel-heading">
+              <h3 class="panel-title">Panel title</h3>
+            </div>
+            <div class="panel-body">
+              Panel content
+            </div>
+          </div>
+          <div class="panel panel-danger panel-dark">
+            <div class="panel-heading">
+              <h3 class="panel-title">Panel title</h3>
+            </div>
+            <div class="panel-body">
+              Panel content
+            </div>
+          </div>
+          <div class="panel panel-border-danger">
+            <div class="panel-heading">
+              <h3 class="panel-title">Panel title</h3>
+            </div>
+            <div class="panel-body">
+              Panel content
+            </div>
+          </div>
+          <div class="panel panel-border-danger panel-dark">
             <div class="panel-heading">
               <h3 class="panel-title">Panel title</h3>
             </div>

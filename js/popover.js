@@ -22,6 +22,8 @@
   Popover.VERSION  = '3.3.7'
 
   Popover.DEFAULTS = $.extend({}, $.fn.tooltip.Constructor.DEFAULTS, {
+    prefixClass : 'popover',
+    type : 'default',
     placement: 'right',
     trigger: 'click',
     content: '',

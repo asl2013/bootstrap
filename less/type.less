@@ -118,26 +118,126 @@ mark,
   .text-emphasis-variant(@state-danger-text);
 }
 
+.bg-default{
+  color:@gray-light;
+  .bg-variant(@gray-lighter);
+  &.bg-rounded{
+    .border-top-radius(@bg-border-radius);
+    .border-bottom-radius(@bg-border-radius);
+    .border-left-radius(@bg-border-radius);
+    .border-right-radius(@bg-border-radius);
+  }
+  &.bg-border{
+    .bg-border(@gray-light);
+  }
+  &.bg-dark{
+    color:#fff;
+    .bg-variant(@gray-light);
+    &.bg-border{
+      .bg-border(darken(@gray-light, 20%));
+    }
+  }
+}
+
 // Contextual backgrounds
 // For now we'll leave these alongside the text classes until v4 when we can
 // safely shift things around (per SemVer rules).
 .bg-primary {
   // Given the contrast here, this is the only class to have its color inverted
   // automatically.
-  color: #fff;
-  .bg-variant(@brand-primary);
+  .bg-variant(@state-primary-bg);
+  &.bg-rounded{
+    .border-top-radius(@bg-border-radius);
+    .border-bottom-radius(@bg-border-radius);
+    .border-left-radius(@bg-border-radius);
+    .border-right-radius(@bg-border-radius);
+  }
+  &.bg-border{
+    .bg-border(darken(@state-primary-bg, 10%));
+  }
+  &.bg-dark{
+    color:#fff;
+    .bg-variant(@brand-primary);
+    &.bg-border{
+      .bg-border(darken(@brand-primary, 20%));
+    }
+  }
 }
 .bg-success {
   .bg-variant(@state-success-bg);
+  &.bg-rounded{
+    .border-top-radius(@bg-border-radius);
+    .border-bottom-radius(@bg-border-radius);
+    .border-left-radius(@bg-border-radius);
+    .border-right-radius(@bg-border-radius);
+  }
+  &.bg-border{
+    .bg-border(darken(@state-success-bg, 10%));
+  }
+  &.bg-dark{
+    color:#fff;
+    .bg-variant(@brand-success);
+    &.bg-border{
+      .bg-border(darken(@brand-success, 20%));
+    }
+  }
 }
 .bg-info {
   .bg-variant(@state-info-bg);
+  &.bg-rounded{
+    .border-top-radius(@bg-border-radius);
+    .border-bottom-radius(@bg-border-radius);
+    .border-left-radius(@bg-border-radius);
+    .border-right-radius(@bg-border-radius);
+  }
+  &.bg-border{
+    .bg-border(darken(@state-info-bg, 10%));
+  }
+  &.bg-dark{
+    color:#fff;
+    .bg-variant(@brand-info);
+    &.bg-border{
+      .bg-border(darken(@brand-info, 20%));
+    }
+  }
 }
 .bg-warning {
   .bg-variant(@state-warning-bg);
+  &.bg-rounded{
+    .border-top-radius(@bg-border-radius);
+    .border-bottom-radius(@bg-border-radius);
+    .border-left-radius(@bg-border-radius);
+    .border-right-radius(@bg-border-radius);
+  }
+  &.bg-border{
+    .bg-border(darken(@state-warning-bg, 10%));
+  }
+  &.bg-dark{
+    color:#fff;
+    .bg-variant(@brand-warning);
+    &.bg-border{
+      .bg-border(darken(@brand-warning, 20%));
+    }
+  }
 }
 .bg-danger {
   .bg-variant(@state-danger-bg);
+  &.bg-rounded{
+    .border-top-radius(@bg-border-radius);
+    .border-bottom-radius(@bg-border-radius);
+    .border-left-radius(@bg-border-radius);
+    .border-right-radius(@bg-border-radius);
+  }
+  &.bg-border{
+    .bg-border(darken(@state-danger-bg, 10%));
+  }
+  &.bg-dark{
+    color:#fff;
+    .bg-variant(@brand-danger);
+    &.bg-border{
+      .bg-border(darken(@brand-danger, 20%));
+    }
+  }
 }
 
 

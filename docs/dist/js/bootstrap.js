@@ -1,6 +1,6 @@
 /*!
  * Bootstrap v3.3.7 (http://getbootstrap.com)
- * Copyright 2011-2016 Twitter, Inc.
+ * Copyright 2011-2017 Twitter, Inc.
  * Licensed under the MIT license
  */
 
@@ -1288,6 +1288,8 @@ if (typeof jQuery === 'undefined') {
 
   Tooltip.DEFAULTS = {
     animation: true,
+    prefixClass : 'tooltip',
+    type : 'default',
     placement: 'top',
     selector: false,
     template: '<div class="tooltip" role="tooltip"><div class="tooltip-arrow"></div><div class="tooltip-inner"></div></div>',
@@ -1458,7 +1460,13 @@ if (typeof jQuery === 'undefined') {
         .detach()
         .css({ top: 0, left: 0, display: 'block' })
         .addClass(placement)
-        .data('bs.' + this.type, this)
+        .data('bs.' + this.type, this);
+      var types = (this.options.type || '').split(' ');
+      var classes = [];
+      for(var i = 0,l = types.length; i < l; i++){
+        classes.push(this.options.prefixClass + '-' + types[i]);
+      }
+      $tip.addClass(classes.join(' '));
 
       this.options.container ? $tip.appendTo(this.options.container) : $tip.insertAfter(this.$element)
       this.$element.trigger('inserted.bs.' + this.type)
@@ -1799,6 +1807,8 @@ if (typeof jQuery === 'undefined') {
   Popover.VERSION  = '3.3.7'
 
   Popover.DEFAULTS = $.extend({}, $.fn.tooltip.Constructor.DEFAULTS, {
+    prefixClass : 'popover',
+    type : 'default',
     placement: 'right',
     trigger: 'click',
     content: '',

@@ -1,0 +1,12 @@
+.popover-variant(@popover-title-bg;@popover-title-color){
+  .popover-title{
+    background-color:@popover-title-bg;
+    color:@popover-title-color;
+    border-bottom-color:darken(@popover-title-bg,10%);
+  }
+  &.bottom:not(.popover-notitle) > .arrow {
+    &:after {
+      border-bottom-color: @popover-title-bg;
+    }
+  }
+}

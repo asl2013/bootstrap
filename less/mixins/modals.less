@@ -1,0 +1,36 @@
+.modal-variant(@head-bg;@head-color;@head-border-color){
+  .modal-header{
+    background-color:@head-bg;
+    color:@head-color;
+    border-bottom-color:@head-border-color;
+    .close{
+      color:@head-color;
+    }
+  }
+}
+
+.modal-border(@head-bg;@head-color;@head-border-color;@top-border-color;@top-border-style:solid;@top-border-width:5px){
+  .modal-content{
+    border-top:@top-border-style @top-border-color @top-border-width;
+    .modal-header{
+      background-color:@head-bg;
+      color:@head-color;
+      border-bottom-color:@head-border-color;
+      .close{
+        color:@head-color;
+      }
+    }
+  }
+}
+
+.modal-padding(@modal-inner-padding;@modal-title-padding){
+  .modal-header {
+    padding: @modal-title-padding;
+  }
+  .modal-body {
+    padding: @modal-inner-padding;
+  }
+  .modal-footer {
+    padding: @modal-inner-padding;
+  }
+}

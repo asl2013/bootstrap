@@ -12,3 +12,11 @@
     color: darken(@text-color, 10%);
   }
 }
+
+.alert-size(@alert-padding; @alert-border-radius){
+  padding:@alert-padding;
+  border-radius: @alert-border-radius;
+  &.alert-dismissible {
+    padding-right: (@alert-padding + 20);
+  }
+}

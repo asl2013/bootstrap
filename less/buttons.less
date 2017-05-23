@@ -49,6 +49,13 @@
     cursor: @cursor-disabled;
     .opacity(.65);
     .box-shadow(none);
+    &:hover,
+    &:focus,
+    &:active{
+      cursor: @cursor-disabled;
+      .opacity(.65);
+      .box-shadow(none);
+    }
   }
 
   a& {
@@ -56,6 +63,13 @@
     fieldset[disabled] & {
       pointer-events: none; // Future-proof disabling of clicks on `<a>` elements
     }
+  }
+
+  &.btn-rounded{
+    .border-top-radius(100px);
+    .border-left-radius(100px);
+    .border-right-radius(100px);
+    .border-bottom-radius(100px);
   }
 }
 
@@ -66,26 +80,54 @@
 .btn-default {
   .button-variant(@btn-default-color; @btn-default-bg; @btn-default-border);
 }
+
+.btn-outline-default{
+  .button-outline(@btn-default-color);
+}
+
 .btn-primary {
   .button-variant(@btn-primary-color; @btn-primary-bg; @btn-primary-border);
 }
+
+.btn-outline-primary{
+  .button-outline(@btn-primary-bg);
+}
+
 // Success appears as green
 .btn-success {
   .button-variant(@btn-success-color; @btn-success-bg; @btn-success-border);
 }
+
+.btn-outline-success{
+  .button-outline(@btn-success-bg);
+}
+
 // Info appears as blue-green
 .btn-info {
   .button-variant(@btn-info-color; @btn-info-bg; @btn-info-border);
 }
+
+.btn-outline-info{
+  .button-outline(@btn-info-bg);
+}
+
 // Warning appears as orange
 .btn-warning {
   .button-variant(@btn-warning-color; @btn-warning-bg; @btn-warning-border);
 }
+
+.btn-outline-warning{
+  .button-outline(@btn-warning-bg);
+}
+
 // Danger and error appear as red
 .btn-danger {
   .button-variant(@btn-danger-color; @btn-danger-bg; @btn-danger-border);
 }
 
+.btn-outline-danger{
+  .button-outline(@btn-danger-bg);
+}
 
 // Link buttons
 // -------------------------

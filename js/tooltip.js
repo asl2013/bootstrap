@@ -32,6 +32,8 @@
 
   Tooltip.DEFAULTS = {
     animation: true,
+    prefixClass : 'tooltip',
+    type : 'default',
     placement: 'top',
     selector: false,
     template: '<div class="tooltip" role="tooltip"><div class="tooltip-arrow"></div><div class="tooltip-inner"></div></div>',
@@ -202,7 +204,13 @@
         .detach()
         .css({ top: 0, left: 0, display: 'block' })
         .addClass(placement)
-        .data('bs.' + this.type, this)
+        .data('bs.' + this.type, this);
+      var types = (this.options.type || '').split(' ');
+      var classes = [];
+      for(var i = 0,l = types.length; i < l; i++){
+        classes.push(this.options.prefixClass + '-' + types[i]);
+      }
+      $tip.addClass(classes.join(' '));
 
       this.options.container ? $tip.appendTo(this.options.container) : $tip.insertAfter(this.$element)
       this.$element.trigger('inserted.bs.' + this.type)

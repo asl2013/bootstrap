@@ -4,15 +4,22 @@
 
 .label {
   display: inline;
-  padding: .2em .6em .3em;
-  font-size: 75%;
-  font-weight: bold;
+  padding: 0.2em 0.4em 0.2em 0.4em;
+  font-size: 70%;
   line-height: 1;
   color: @label-color;
   text-align: center;
   white-space: nowrap;
-  vertical-align: baseline;
-  border-radius: .25em;
+  vertical-align: middle;
+  border-radius: .15em;
+
+  &.label-multi-row{
+    display: inline-block;
+    white-space: normal;
+    word-wrap: break-word;
+    word-break: break-all;
+    text-align: left;
+  }
 
   // Add hover effects, but only for links
   a& {
@@ -43,22 +50,46 @@
   .label-variant(@label-default-bg);
 }
 
+.label-outline-default{
+  .label-outline(@label-default-bg);
+}
+
 .label-primary {
   .label-variant(@label-primary-bg);
+}
+
+.label-outline-primary{
+  .label-outline(@label-primary-bg);
 }
 
 .label-success {
   .label-variant(@label-success-bg);
 }
 
+.label-outline-success{
+  .label-outline(@label-success-bg);
+}
+
 .label-info {
   .label-variant(@label-info-bg);
+}
+
+.label-outline-info{
+  .label-outline(@label-info-bg);
 }
 
 .label-warning {
   .label-variant(@label-warning-bg);
 }
 
+.label-outline-warning{
+  .label-outline(@label-warning-bg);
+}
+
 .label-danger {
   .label-variant(@label-danger-bg);
+}
+
+.label-outline-danger{
+  .label-outline(@label-danger-bg);
 }

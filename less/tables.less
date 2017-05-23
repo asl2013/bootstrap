@@ -37,10 +37,24 @@ th {
       }
     }
   }
+  > thead{
+    border-bottom: 2px solid darken(@table-border-color,20%);
+    box-shadow: 0 4px 4px -4px rgba(0,0,0,0.4);
+    .clickable{
+      cursor:pointer;
+      &:hover{
+        background-color:@table-head-hover-bg;
+        color:@table-head-hover-color;
+      }
+      &:active{
+        background-color:@table-head-active-bg;
+        color:@table-head-active-color;
+      }
+    }
+  }
   // Bottom align for column headings
   > thead > tr > th {
     vertical-align: bottom;
-    border-bottom: 2px solid @table-border-color;
   }
   // Remove top border from thead by default
   > caption + thead,
@@ -61,6 +75,13 @@ th {
   // Nesting
   .table {
     background-color: @body-bg;
+  }
+}
+
+.table-headbg{
+  > thead{
+    background-color:@table-head-bg;
+    color:@table-head-color;
   }
 }
 
@@ -101,6 +122,7 @@ th {
     > th,
     > td {
       border-bottom-width: 2px;
+      border-bottom-color: darken(@table-border-color,20%);
     }
   }
 }
@@ -111,7 +133,7 @@ th {
 // Default zebra-stripe styles (alternating gray and transparent backgrounds)
 
 .table-striped {
-  > tbody > tr:nth-of-type(odd) {
+  > tbody > tr:nth-of-type(even) {
     background-color: @table-bg-accent;
   }
 }
@@ -155,11 +177,13 @@ table {
 // inheritance to nested tables.
 
 // Generate the contextual variants
-.table-row-variant(active; @table-bg-active);
-.table-row-variant(success; @state-success-bg);
-.table-row-variant(info; @state-info-bg);
-.table-row-variant(warning; @state-warning-bg);
-.table-row-variant(danger; @state-danger-bg);
+.table{
+  .table-row-variant(active; @table-bg-active);
+  .table-row-variant(success; @state-success-bg);
+  .table-row-variant(info; @state-info-bg);
+  .table-row-variant(warning; @state-warning-bg);
+  .table-row-variant(danger; @state-danger-bg);
+}
 
 
 // Responsive tables
@@ -231,4 +255,28 @@ table {
 
     }
   }
+}
+
+.table-default{
+  .table-variant(@table-default-head-bg;@table-default-head-hover-bg;@table-default-head-active-bg;@gray-light;@table-bg-default-accent;@table-bg-default-hover;@table-bg-default-active);
+}
+
+.table-primary{
+  .table-variant(@table-primary-head-bg;@table-primary-head-hover-bg;@table-primary-head-active-bg;@brand-primary;@table-bg-primary-accent;@table-bg-primary-hover;@table-bg-primary-active);
+}
+
+.table-success{
+  .table-variant(@table-success-head-bg;@table-success-head-hover-bg;@table-success-head-active-bg;@brand-success;@table-bg-success-accent;@table-bg-success-hover;@table-bg-success-active);
+}
+
+.table-info{
+  .table-variant(@table-info-head-bg;@table-info-head-hover-bg;@table-info-head-active-bg;@brand-info;@table-bg-info-accent;@table-bg-info-hover;@table-bg-info-active);
+}
+
+.table-warning{
+  .table-variant(@table-warning-head-bg;@table-warning-head-hover-bg;@table-warning-head-active-bg;@brand-warning;@table-bg-warning-accent;@table-bg-warning-hover;@table-bg-warning-active);
+}
+
+.table-danger{
+  .table-variant(@table-danger-head-bg;@table-danger-head-hover-bg;@table-danger-head-active-bg;@brand-danger;@table-bg-danger-accent;@table-bg-danger-hover;@table-bg-danger-active);
 }

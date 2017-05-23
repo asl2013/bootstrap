@@ -1,11 +1,51 @@
 // Tables
+.table-variant(@table-head-bg;@table-head-hover-bg;@table-head-active-bg;@head-border-color;@table-bg-accent;@table-bg-hover;@table-bg-active){
+  > thead{
+    border-bottom-color:@head-border-color;
+    .clickable{
+      &:hover{
+        background-color:@table-head-hover-bg;
+      }
+      &:active{
+        background-color:@table-head-active-bg;
+      }
+    }
+  }
+
+  &.table-headbg{
+    > thead{
+      background-color:@table-head-bg;
+    }
+  }
+
+
+  &.table-bordered{
+    > thead > tr {
+      > th,
+      > td {
+        border-bottom-color: @head-border-color;
+      }
+    }
+  }
+  /*&.table-striped {
+    > tbody > tr:nth-of-type(even) {
+      background-color: @table-bg-accent;
+    }
+  }*/
+  &.table-hover {
+    > tbody > tr:hover {
+      background-color: @table-bg-hover;
+    }
+  }
+  .table-row-variant(active;@table-bg-active);
+}
 
 .table-row-variant(@state; @background) {
   // Exact selectors below required to override `.table-striped` and prevent
   // inheritance to nested tables.
-  .table > thead > tr,
-  .table > tbody > tr,
-  .table > tfoot > tr {
+  & > thead > tr,
+  & > tbody > tr,
+  & > tfoot > tr {
     > td.@{state},
     > th.@{state},
     &.@{state} > td,
@@ -16,7 +56,7 @@
 
   // Hover states for `.table-hover`
   // Note: this is not available for cells or rows within `thead` or `tfoot`.
-  .table-hover > tbody > tr {
+  &.table-hover > tbody > tr {
     > td.@{state}:hover,
     > th.@{state}:hover,
     &.@{state}:hover > td,

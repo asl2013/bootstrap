@@ -36,8 +36,8 @@
   display: none; // none by default, but block on "open" of the menu
   float: left;
   min-width: 160px;
-  padding: 5px 0;
-  margin: 2px 0 0; // override default ul
+  padding: 0 0;
+  margin: 3px 0 3px 0; // override default ul
   list-style: none;
   font-size: @font-size-base;
   text-align: left; // Ensures proper alignment if parent has it changed (e.g., modal footer)
@@ -45,7 +45,7 @@
   border: 1px solid @dropdown-fallback-border; // IE8 fallback
   border: 1px solid @dropdown-border;
   border-radius: @border-radius-base;
-  .box-shadow(0 6px 12px rgba(0,0,0,.175));
+  .box-shadow(0 2px 4px rgba(0,0,0,.15));
   background-clip: padding-box;
 
   // Aligns the dropdown menu to right
@@ -64,7 +64,7 @@
   // Links within the dropdown menu
   > li > a {
     display: block;
-    padding: 3px 20px;
+    padding: 5px 10px;
     clear: both;
     font-weight: normal;
     line-height: @line-height-base;
@@ -152,11 +152,14 @@
 // Dropdown section headers
 .dropdown-header {
   display: block;
-  padding: 3px 20px;
+  padding: 5px 10px;
   font-size: @font-size-small;
   line-height: @line-height-base;
   color: @dropdown-header-color;
   white-space: nowrap; // as with > li > a
+  background-color: lighten(@dropdown-header-color,40%);
+  border-top: solid 1px lighten(@dropdown-header-color,38%);
+  border-bottom: solid 1px lighten(@dropdown-header-color,38%);
 }
 
 // Backdrop to catch body clicks on mobile, etc.
@@ -193,7 +196,7 @@
   .dropdown-menu {
     top: auto;
     bottom: 100%;
-    margin-bottom: 2px;
+    margin-bottom: 3px;
   }
 }
 

@@ -22,3 +22,34 @@
     }
   }
 }
+
+.panel-border(@border;@heading-border-color;@heading-text-color;@heading-bg-color; @body-bg-color;@body-color) {
+  border-color:@border;
+  border-top-color:@heading-border-color;
+  border-top-width: 5px;
+  .border-top-radius(8px);
+  & > .panel-heading {
+    color: @heading-text-color;
+    background-color: @heading-bg-color;
+    border-color: @border;
+
+    + .panel-collapse > .panel-body {
+      border-top-color: @border;
+    }
+    .badge {
+      color: @heading-bg-color;
+      background-color: @heading-text-color;
+    }
+  }
+
+  & > .panel-body{
+    background-color:@body-bg-color;
+    color:@body-color;
+  }
+
+  & > .panel-footer {
+    + .panel-collapse > .panel-body {
+      border-bottom-color: @border;
+    }
+  }
+}
