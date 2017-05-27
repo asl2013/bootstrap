@@ -351,14 +351,14 @@
 
 // Medium screen / desktop
 //** Deprecated `@screen-md` as of v3.0.1
-@screen-md:                  992px;
+@screen-md:                  1200px;
 @screen-md-min:              @screen-md;
 //** Deprecated `@screen-desktop` as of v3.0.1
 @screen-desktop:             @screen-md-min;
 
 // Large screen / wide desktop
 //** Deprecated `@screen-lg` as of v3.0.1
-@screen-lg:                  1200px;
+@screen-lg:                  1600px;
 @screen-lg-min:              @screen-lg;
 //** Deprecated `@screen-lg-desktop` as of v3.0.1
 @screen-lg-desktop:          @screen-lg-min;
@@ -376,7 +376,7 @@
 //** Number of columns in the grid.
 @grid-columns:              12;
 //** Padding between columns. Gets divided in half for the left and right.
-@grid-gutter-width:         30px;
+@grid-gutter-width:         20px;
 // Navbar collapse
 //** Point at which the navbar becomes uncollapsed.
 @grid-float-breakpoint:     @screen-sm-min;
@@ -503,17 +503,114 @@
 @pagination-bg:                        #fff;
 @pagination-border:                    #ddd;
 
+@pagination-default-color:             @gray-light;
+@pagination-default-bg:                #fff;
+@pagination-default-border:            #ddd;
+
+@pagination-primary-color:             @brand-primary;
+@pagination-primary-bg:                #fff;
+@pagination-primary-border:            #ddd;
+
+@pagination-success-color:             @brand-success;
+@pagination-success-bg:                #fff;
+@pagination-success-border:            #ddd;
+
+@pagination-info-color:                @brand-info;
+@pagination-info-bg:                   #fff;
+@pagination-info-border:               #ddd;
+
+@pagination-warning-color:             @brand-warning;
+@pagination-warning-bg:                #fff;
+@pagination-warning-border:            #ddd;
+
+@pagination-danger-color:             @brand-danger;
+@pagination-danger-bg:                #fff;
+@pagination-danger-border:            #ddd;
+
 @pagination-hover-color:               @link-hover-color;
 @pagination-hover-bg:                  @gray-lighter;
-@pagination-hover-border:              #ddd;
+@pagination-hover-border:              @pagination-border;
+
+@pagination-default-hover-color:       @gray-base;
+@pagination-default-hover-bg:          @gray-lighter;
+@pagination-default-hover-border:      darken(@gray-lighter,5%);
+
+@pagination-primary-hover-color:       darken(@brand-primary,10%);
+@pagination-primary-hover-bg:          lighten(@brand-primary,30%);
+@pagination-primary-hover-border:      lighten(@brand-primary,25%);
+
+@pagination-success-hover-color:       darken(@brand-success,10%);
+@pagination-success-hover-bg:          lighten(@brand-success,30%);
+@pagination-success-hover-border:      lighten(@brand-success,25%);
+
+@pagination-info-hover-color:          darken(@brand-info,10%);
+@pagination-info-hover-bg:             lighten(@brand-info,30%);
+@pagination-info-hover-border:         lighten(@brand-info,25%);
+
+@pagination-warning-hover-color:       darken(@brand-warning,10%);
+@pagination-warning-hover-bg:          lighten(@brand-warning,30%);
+@pagination-warning-hover-border:      lighten(@brand-warning,25%);
+
+@pagination-danger-hover-color:       darken(@brand-danger,10%);
+@pagination-danger-hover-bg:          lighten(@brand-danger,30%);
+@pagination-danger-hover-border:      lighten(@brand-danger,25%);
+
 
 @pagination-active-color:              #fff;
 @pagination-active-bg:                 @brand-primary;
 @pagination-active-border:             @brand-primary;
 
+@pagination-default-active-color:      #fff;
+@pagination-default-active-bg:         @gray-light;
+@pagination-default-active-border:     @gray-light;
+
+@pagination-primary-active-color:      #fff;
+@pagination-primary-active-bg:         @brand-primary;
+@pagination-primary-active-border:     @brand-primary;
+
+@pagination-success-active-color:      #fff;
+@pagination-success-active-bg:         @brand-success;
+@pagination-success-active-border:     @brand-success;
+
+@pagination-info-active-color:         #fff;
+@pagination-info-active-bg:            @brand-info;
+@pagination-info-active-border:        @brand-info;
+
+@pagination-warning-active-color:      #fff;
+@pagination-warning-active-bg:         @brand-warning;
+@pagination-warning-active-border:     @brand-warning;
+
+@pagination-danger-active-color:      #fff;
+@pagination-danger-active-bg:         @brand-danger;
+@pagination-danger-active-border:     @brand-danger;
+
 @pagination-disabled-color:            @gray-light;
 @pagination-disabled-bg:               #fff;
 @pagination-disabled-border:           #ddd;
+
+@pagination-default-disabled-color:            lighten(@gray-light,20%);
+@pagination-default-disabled-bg:               #fff;
+@pagination-default-disabled-border:           #ddd;
+
+@pagination-primary-disabled-color:            @pagination-default-disabled-color;
+@pagination-primary-disabled-bg:               #fff;
+@pagination-primary-disabled-border:           #ddd;
+
+@pagination-success-disabled-color:            @pagination-default-disabled-color;
+@pagination-success-disabled-bg:               #fff;
+@pagination-success-disabled-border:           #ddd;
+
+@pagination-info-disabled-color:               @pagination-default-disabled-color;
+@pagination-info-disabled-bg:                  #fff;
+@pagination-info-disabled-border:              #ddd;
+
+@pagination-warning-disabled-color:            @pagination-default-disabled-color;
+@pagination-warning-disabled-bg:               #fff;
+@pagination-warning-disabled-border:           #ddd;
+
+@pagination-danger-disabled-color:            @pagination-default-disabled-color;
+@pagination-danger-disabled-bg:               #fff;
+@pagination-danger-disabled-border:           #ddd;
 
 
 //== Pager

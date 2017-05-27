@@ -1,5 +1,52 @@
 // Pagination
 
+.pagination-variant(@pagination-color;@pagination-bg;@pagination-border;@pagination-hover-color;@pagination-hover-bg;@pagination-hover-border;@pagination-active-color;@pagination-active-bg;@pagination-active-border;@pagination-disabled-color;@pagination-disabled-bg;@pagination-disabled-border){
+  > li {
+    display: inline; // Remove list-style and block-level defaults
+    > a,
+    > span {
+      color: @pagination-color;
+      background-color: @pagination-bg;
+      border: 1px solid @pagination-border;
+    }
+  }
+
+  > li > a,
+  > li > span {
+    &:hover,
+    &:focus {
+      color: @pagination-hover-color;
+      background-color: @pagination-hover-bg;
+      border-color: @pagination-hover-border;
+    }
+  }
+
+
+  > .active > a,
+  > .active > span {
+    &,
+    &:hover,
+    &:focus {
+      color: @pagination-active-color;
+      background-color: @pagination-active-bg;
+      border-color: @pagination-active-border;
+    }
+  }
+
+  > .disabled {
+    > span,
+    > span:hover,
+    > span:focus,
+    > a,
+    > a:hover,
+    > a:focus {
+      color: @pagination-disabled-color;
+      background-color: @pagination-disabled-bg;
+      border-color: @pagination-disabled-border;
+    }
+  }
+}
+
 .pagination-size(@padding-vertical; @padding-horizontal; @font-size; @line-height; @border-radius) {
   > li {
     > a,
