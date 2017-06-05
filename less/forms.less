@@ -129,6 +129,25 @@ output {
   // Customize the `:focus` state to imitate native WebKit styles.
   .form-control-focus();
 
+  &.focus-default{
+    .form-control-focus(@gray-light);
+  }
+  &.focus-primary{
+    .form-control-focus(@brand-primary);
+  }
+  &.focus-success{
+    .form-control-focus(@brand-success);
+  }
+  &.focus-info{
+    .form-control-focus(@brand-info);
+  }
+  &.focus-warning{
+    .form-control-focus(@brand-warning);
+  }
+  &.focus-danger{
+    .form-control-focus(@brand-danger);
+  }
+
   // Placeholder
   .placeholder();
 
