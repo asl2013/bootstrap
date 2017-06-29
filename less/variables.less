@@ -417,15 +417,15 @@
 @navbar-collapse-max-height:       340px;
 
 @navbar-default-color:             #777;
-@navbar-default-bg:                #f8f8f8;
-@navbar-default-border:            darken(@navbar-default-bg, 6.5%);
+@navbar-default-bg:                #f6f6f6;
+@navbar-default-border:            darken(@navbar-default-bg, 15%);
 
 // Navbar links
 @navbar-default-link-color:                #777;
 @navbar-default-link-hover-color:          #333;
-@navbar-default-link-hover-bg:             transparent;
+@navbar-default-link-hover-bg:             darken(@navbar-default-bg,5%);
 @navbar-default-link-active-color:         #555;
-@navbar-default-link-active-bg:            darken(@navbar-default-bg, 6.5%);
+@navbar-default-link-active-bg:            @navbar-default-border;
 @navbar-default-link-disabled-color:       #ccc;
 @navbar-default-link-disabled-bg:          transparent;
 
@@ -435,24 +435,25 @@
 @navbar-default-brand-hover-bg:            transparent;
 
 // Navbar toggle
-@navbar-default-toggle-hover-bg:           #ddd;
-@navbar-default-toggle-icon-bar-bg:        #888;
-@navbar-default-toggle-border-color:       #ddd;
+@navbar-default-toggle-hover-bg:           darken(@navbar-default-bg,5%);
+@navbar-default-toggle-icon-bar-bg:        @navbar-default-link-color;
+@navbar-default-toggle-icon-bar-hover-bg:  @navbar-default-link-hover-color;
+@navbar-default-toggle-border-color:       @navbar-default-border;
 
 
 //=== Inverted navbar
 // Reset inverted navbar basics
 @navbar-inverse-color:                      lighten(@gray-light, 15%);
-@navbar-inverse-bg:                         #222;
+@navbar-inverse-bg:                         @gray-dark;
 @navbar-inverse-border:                     darken(@navbar-inverse-bg, 10%);
 
 // Inverted navbar links
-@navbar-inverse-link-color:                 lighten(@gray-light, 15%);
+@navbar-inverse-link-color:                 darken(@gray-lighter,15%);
 @navbar-inverse-link-hover-color:           #fff;
-@navbar-inverse-link-hover-bg:              transparent;
+@navbar-inverse-link-hover-bg:              lighten(@navbar-inverse-bg, 5%);
 @navbar-inverse-link-active-color:          @navbar-inverse-link-hover-color;
 @navbar-inverse-link-active-bg:             darken(@navbar-inverse-bg, 10%);
-@navbar-inverse-link-disabled-color:        #444;
+@navbar-inverse-link-disabled-color:        darken(@navbar-inverse-link-color,20%);
 @navbar-inverse-link-disabled-bg:           transparent;
 
 // Inverted navbar brand label
@@ -461,9 +462,278 @@
 @navbar-inverse-brand-hover-bg:             transparent;
 
 // Inverted navbar toggle
-@navbar-inverse-toggle-hover-bg:            #333;
+@navbar-inverse-toggle-hover-bg:            @navbar-inverse-link-hover-bg;
 @navbar-inverse-toggle-icon-bar-bg:         #fff;
-@navbar-inverse-toggle-border-color:        #333;
+@navbar-inverse-toggle-icon-bar-hover-bg:   @navbar-inverse-toggle-icon-bar-bg;
+@navbar-inverse-toggle-border-color:        #fff;
+
+//////////////////////
+
+
+@navbar-primary-color:             @navbar-default-color;
+@navbar-primary-bg:                @navbar-default-bg;
+@navbar-primary-border:            @navbar-default-border;
+
+// Navbar links
+@navbar-primary-link-color:                @navbar-default-link-color;
+@navbar-primary-link-hover-color:          @navbar-default-link-hover-color;
+@navbar-primary-link-hover-bg:             @navbar-default-link-hover-bg;
+@navbar-primary-link-active-color:         #fff;
+@navbar-primary-link-active-bg:            @brand-primary;
+@navbar-primary-link-disabled-color:       @navbar-default-link-disabled-color;
+@navbar-primary-link-disabled-bg:          @navbar-default-link-disabled-bg;
+
+// Navbar brand label
+@navbar-primary-brand-color:               @navbar-default-brand-color;
+@navbar-primary-brand-hover-color:         @navbar-default-brand-hover-color;
+@navbar-primary-brand-hover-bg:            @navbar-default-brand-hover-bg;
+
+// Navbar toggle
+@navbar-primary-toggle-hover-bg:           @navbar-primary-link-active-bg;
+@navbar-primary-toggle-icon-bar-bg:        darken(@brand-primary,5%);
+@navbar-primary-toggle-icon-bar-hover-bg:  @navbar-primary-link-active-color;
+@navbar-primary-toggle-border-color:       darken(@brand-primary,5%);
+
+
+@navbar-primary-inverse-color:                      lighten(@brand-primary, 35%);
+@navbar-primary-inverse-bg:                         @brand-primary;
+@navbar-primary-inverse-border:                     darken(@navbar-primary-inverse-bg, 10%);
+
+// Inverted navbar links
+@navbar-primary-inverse-link-color:                 lighten(@brand-primary,35%);
+@navbar-primary-inverse-link-hover-color:           #fff;
+@navbar-primary-inverse-link-hover-bg:              lighten(@navbar-primary-inverse-bg, 5%);
+@navbar-primary-inverse-link-active-color:          @navbar-primary-inverse-link-hover-color;
+@navbar-primary-inverse-link-active-bg:             darken(@navbar-primary-inverse-bg, 10%);
+@navbar-primary-inverse-link-disabled-color:        darken(@navbar-primary-inverse-link-color,10%);
+@navbar-primary-inverse-link-disabled-bg:           transparent;
+
+// Inverted navbar brand label
+@navbar-primary-inverse-brand-color:                @navbar-primary-inverse-link-color;
+@navbar-primary-inverse-brand-hover-color:          #fff;
+@navbar-primary-inverse-brand-hover-bg:             transparent;
+
+// Inverted navbar toggle
+@navbar-primary-inverse-toggle-hover-bg:            @navbar-primary-inverse-link-hover-bg;
+@navbar-primary-inverse-toggle-icon-bar-bg:         #fff;
+@navbar-primary-inverse-toggle-icon-bar-hover-bg:   @navbar-primary-inverse-toggle-icon-bar-bg;
+@navbar-primary-inverse-toggle-border-color:        #fff;
+
+
+
+@navbar-success-color:             @navbar-default-color;
+@navbar-success-bg:                @navbar-default-bg;
+@navbar-success-border:            @navbar-default-border;
+
+// Navbar links
+@navbar-success-link-color:                @navbar-default-link-color;
+@navbar-success-link-hover-color:          @navbar-default-link-hover-color;
+@navbar-success-link-hover-bg:             @navbar-default-link-hover-bg;
+@navbar-success-link-active-color:         #fff;
+@navbar-success-link-active-bg:            @brand-success;
+@navbar-success-link-disabled-color:       @navbar-default-link-disabled-color;
+@navbar-success-link-disabled-bg:          @navbar-default-link-disabled-bg;
+
+// Navbar brand label
+@navbar-success-brand-color:               @navbar-default-brand-color;
+@navbar-success-brand-hover-color:         @navbar-default-brand-hover-color;
+@navbar-success-brand-hover-bg:            @navbar-default-brand-hover-bg;
+
+// Navbar toggle
+@navbar-success-toggle-hover-bg:           @navbar-success-link-active-bg;
+@navbar-success-toggle-icon-bar-bg:        darken(@brand-success,5%);
+@navbar-success-toggle-icon-bar-hover-bg:  @navbar-success-link-active-color;
+@navbar-success-toggle-border-color:       darken(@brand-success,5%);
+
+
+@navbar-success-inverse-color:                      lighten(@brand-success, 35%);
+@navbar-success-inverse-bg:                         @brand-success;
+@navbar-success-inverse-border:                     darken(@navbar-success-inverse-bg, 10%);
+
+// Inverted navbar links
+@navbar-success-inverse-link-color:                 lighten(@brand-success,35%);
+@navbar-success-inverse-link-hover-color:           #fff;
+@navbar-success-inverse-link-hover-bg:              lighten(@navbar-success-inverse-bg, 5%);
+@navbar-success-inverse-link-active-color:          @navbar-success-inverse-link-hover-color;
+@navbar-success-inverse-link-active-bg:             darken(@navbar-success-inverse-bg, 10%);
+@navbar-success-inverse-link-disabled-color:        darken(@navbar-success-inverse-link-color,10%);
+@navbar-success-inverse-link-disabled-bg:           transparent;
+
+// Inverted navbar brand label
+@navbar-success-inverse-brand-color:                @navbar-success-inverse-link-color;
+@navbar-success-inverse-brand-hover-color:          #fff;
+@navbar-success-inverse-brand-hover-bg:             transparent;
+
+// Inverted navbar toggle
+@navbar-success-inverse-toggle-hover-bg:            @navbar-success-inverse-link-hover-bg;
+@navbar-success-inverse-toggle-icon-bar-bg:         #fff;
+@navbar-success-inverse-toggle-icon-bar-hover-bg:   @navbar-success-inverse-toggle-icon-bar-bg;
+@navbar-success-inverse-toggle-border-color:        #fff;
+
+
+@navbar-info-color:             @navbar-default-color;
+@navbar-info-bg:                @navbar-default-bg;
+@navbar-info-border:            @navbar-default-border;
+
+// Navbar links
+@navbar-info-link-color:                @navbar-default-link-color;
+@navbar-info-link-hover-color:          @navbar-default-link-hover-color;
+@navbar-info-link-hover-bg:             @navbar-default-link-hover-bg;
+@navbar-info-link-active-color:         #fff;
+@navbar-info-link-active-bg:            @brand-info;
+@navbar-info-link-disabled-color:       @navbar-default-link-disabled-color;
+@navbar-info-link-disabled-bg:          @navbar-default-link-disabled-bg;
+
+// Navbar brand label
+@navbar-info-brand-color:               @navbar-default-brand-color;
+@navbar-info-brand-hover-color:         @navbar-default-brand-hover-color;
+@navbar-info-brand-hover-bg:            @navbar-default-brand-hover-bg;
+
+// Navbar toggle
+@navbar-info-toggle-hover-bg:           @navbar-info-link-active-bg;
+@navbar-info-toggle-icon-bar-bg:        darken(@brand-info,5%);
+@navbar-info-toggle-icon-bar-hover-bg:  @navbar-info-link-active-color;
+@navbar-info-toggle-border-color:       darken(@brand-info,5%);
+
+
+@navbar-info-inverse-color:                      lighten(@brand-info, 35%);
+@navbar-info-inverse-bg:                         @brand-info;
+@navbar-info-inverse-border:                     darken(@navbar-info-inverse-bg, 10%);
+
+// Inverted navbar links
+@navbar-info-inverse-link-color:                 lighten(@brand-info,35%);
+@navbar-info-inverse-link-hover-color:           #fff;
+@navbar-info-inverse-link-hover-bg:              lighten(@navbar-info-inverse-bg, 5%);
+@navbar-info-inverse-link-active-color:          @navbar-info-inverse-link-hover-color;
+@navbar-info-inverse-link-active-bg:             darken(@navbar-info-inverse-bg, 10%);
+@navbar-info-inverse-link-disabled-color:        darken(@navbar-info-inverse-link-color,10%);
+@navbar-info-inverse-link-disabled-bg:           transparent;
+
+// Inverted navbar brand label
+@navbar-info-inverse-brand-color:                @navbar-info-inverse-link-color;
+@navbar-info-inverse-brand-hover-color:          #fff;
+@navbar-info-inverse-brand-hover-bg:             transparent;
+
+// Inverted navbar toggle
+@navbar-info-inverse-toggle-hover-bg:            @navbar-info-inverse-link-hover-bg;
+@navbar-info-inverse-toggle-icon-bar-bg:         #fff;
+@navbar-info-inverse-toggle-icon-bar-hover-bg:   @navbar-info-inverse-toggle-icon-bar-bg;
+@navbar-info-inverse-toggle-border-color:        #fff;
+
+
+@navbar-warning-color:             @navbar-default-color;
+@navbar-warning-bg:                @navbar-default-bg;
+@navbar-warning-border:            @navbar-default-border;
+
+// Navbar links
+@navbar-warning-link-color:                @navbar-default-link-color;
+@navbar-warning-link-hover-color:          @navbar-default-link-hover-color;
+@navbar-warning-link-hover-bg:             @navbar-default-link-hover-bg;
+@navbar-warning-link-active-color:         #fff;
+@navbar-warning-link-active-bg:            @brand-warning;
+@navbar-warning-link-disabled-color:       @navbar-default-link-disabled-color;
+@navbar-warning-link-disabled-bg:          @navbar-default-link-disabled-bg;
+
+// Navbar brand label
+@navbar-warning-brand-color:               @navbar-default-brand-color;
+@navbar-warning-brand-hover-color:         @navbar-default-brand-hover-color;
+@navbar-warning-brand-hover-bg:            @navbar-default-brand-hover-bg;
+
+// Navbar toggle
+@navbar-warning-toggle-hover-bg:           @navbar-warning-link-active-bg;
+@navbar-warning-toggle-icon-bar-bg:        darken(@brand-warning,5%);
+@navbar-warning-toggle-icon-bar-hover-bg:  @navbar-warning-link-active-color;
+@navbar-warning-toggle-border-color:       darken(@brand-warning,5%);
+
+
+@navbar-warning-inverse-color:                      lighten(@brand-warning, 35%);
+@navbar-warning-inverse-bg:                         @brand-warning;
+@navbar-warning-inverse-border:                     darken(@navbar-warning-inverse-bg, 10%);
+
+// Inverted navbar links
+@navbar-warning-inverse-link-color:                 lighten(@brand-warning,35%);
+@navbar-warning-inverse-link-hover-color:           #fff;
+@navbar-warning-inverse-link-hover-bg:              lighten(@navbar-warning-inverse-bg, 5%);
+@navbar-warning-inverse-link-active-color:          @navbar-warning-inverse-link-hover-color;
+@navbar-warning-inverse-link-active-bg:             darken(@navbar-warning-inverse-bg, 10%);
+@navbar-warning-inverse-link-disabled-color:        darken(@navbar-warning-inverse-link-color,10%);
+@navbar-warning-inverse-link-disabled-bg:           transparent;
+
+// Inverted navbar brand label
+@navbar-warning-inverse-brand-color:                @navbar-warning-inverse-link-color;
+@navbar-warning-inverse-brand-hover-color:          #fff;
+@navbar-warning-inverse-brand-hover-bg:             transparent;
+
+// Inverted navbar toggle
+@navbar-warning-inverse-toggle-hover-bg:            @navbar-warning-inverse-link-hover-bg;
+@navbar-warning-inverse-toggle-icon-bar-bg:         #fff;
+@navbar-warning-inverse-toggle-icon-bar-hover-bg:   @navbar-warning-inverse-toggle-icon-bar-bg;
+@navbar-warning-inverse-toggle-border-color:        #fff;
+
+
+@navbar-danger-color:             @navbar-default-color;
+@navbar-danger-bg:                @navbar-default-bg;
+@navbar-danger-border:            @navbar-default-border;
+
+// Navbar links
+@navbar-danger-link-color:                @navbar-default-link-color;
+@navbar-danger-link-hover-color:          @navbar-default-link-hover-color;
+@navbar-danger-link-hover-bg:             @navbar-default-link-hover-bg;
+@navbar-danger-link-active-color:         #fff;
+@navbar-danger-link-active-bg:            @brand-danger;
+@navbar-danger-link-disabled-color:       @navbar-default-link-disabled-color;
+@navbar-danger-link-disabled-bg:          @navbar-default-link-disabled-bg;
+
+// Navbar brand label
+@navbar-danger-brand-color:               @navbar-default-brand-color;
+@navbar-danger-brand-hover-color:         @navbar-default-brand-hover-color;
+@navbar-danger-brand-hover-bg:            @navbar-default-brand-hover-bg;
+
+// Navbar toggle
+@navbar-danger-toggle-hover-bg:           @navbar-danger-link-active-bg;
+@navbar-danger-toggle-icon-bar-bg:        darken(@brand-danger,5%);
+@navbar-danger-toggle-icon-bar-hover-bg:  @navbar-danger-link-active-color;
+@navbar-danger-toggle-border-color:       darken(@brand-danger,5%);
+
+
+@navbar-danger-inverse-color:                      lighten(@brand-danger, 35%);
+@navbar-danger-inverse-bg:                         @brand-danger;
+@navbar-danger-inverse-border:                     darken(@navbar-danger-inverse-bg, 10%);
+
+// Inverted navbar links
+@navbar-danger-inverse-link-color:                 lighten(@brand-danger,35%);
+@navbar-danger-inverse-link-hover-color:           #fff;
+@navbar-danger-inverse-link-hover-bg:              lighten(@navbar-danger-inverse-bg, 5%);
+@navbar-danger-inverse-link-active-color:          @navbar-danger-inverse-link-hover-color;
+@navbar-danger-inverse-link-active-bg:             darken(@navbar-danger-inverse-bg, 10%);
+@navbar-danger-inverse-link-disabled-color:        darken(@navbar-danger-inverse-link-color,10%);
+@navbar-danger-inverse-link-disabled-bg:           transparent;
+
+// Inverted navbar brand label
+@navbar-danger-inverse-brand-color:                @navbar-danger-inverse-link-color;
+@navbar-danger-inverse-brand-hover-color:          #fff;
+@navbar-danger-inverse-brand-hover-bg:             transparent;
+
+// Inverted navbar toggle
+@navbar-danger-inverse-toggle-hover-bg:            @navbar-danger-inverse-link-hover-bg;
+@navbar-danger-inverse-toggle-icon-bar-bg:         #fff;
+@navbar-danger-inverse-toggle-icon-bar-hover-bg:   @navbar-danger-inverse-toggle-icon-bar-bg;
+@navbar-danger-inverse-toggle-border-color:        #fff;
+
+
+
+
+
+
+
+//////////////////////
+
+
+
+
+
+
+
 
 
 //== Navs

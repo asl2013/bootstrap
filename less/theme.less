@@ -129,17 +129,22 @@
 
 // Default navbar
 .navbar-default {
-  #gradient > .vertical(@start-color: lighten(@navbar-default-bg, 10%); @end-color: @navbar-default-bg);
-  .reset-filter(); // Remove gradient in IE<10 to fix bug where dropdowns don't get triggered
-  border-radius: @navbar-border-radius;
-  @shadow: inset 0 1px 0 rgba(255,255,255,.15), 0 1px 5px rgba(0,0,0,.075);
-  .box-shadow(@shadow);
-
-  .navbar-nav > .open > a,
-  .navbar-nav > .active > a {
-    #gradient > .vertical(@start-color: darken(@navbar-default-link-active-bg, 5%); @end-color: darken(@navbar-default-link-active-bg, 2%));
-    .box-shadow(inset 0 3px 9px rgba(0,0,0,.075));
-  }
+  .navbar-theme-variant(@navbar-default-bg;@navbar-default-link-active-bg;@navbar-default-link-hover-bg);
+}
+.navbar-primary {
+  .navbar-theme-variant(@navbar-primary-bg;@navbar-primary-link-active-bg;@navbar-primary-link-hover-bg);
+}
+.navbar-success {
+  .navbar-theme-variant(@navbar-success-bg;@navbar-success-link-active-bg;@navbar-success-link-hover-bg);
+}
+.navbar-info {
+  .navbar-theme-variant(@navbar-info-bg;@navbar-info-link-active-bg;@navbar-info-link-hover-bg);
+}
+.navbar-warning {
+  .navbar-theme-variant(@navbar-warning-bg;@navbar-warning-link-active-bg;@navbar-warning-link-hover-bg);
+}
+.navbar-danger {
+  .navbar-theme-variant(@navbar-danger-bg;@navbar-danger-link-active-bg;@navbar-danger-link-hover-bg);
 }
 .navbar-brand,
 .navbar-nav > li > a {
@@ -148,21 +153,23 @@
 
 // Inverted navbar
 .navbar-inverse {
-  #gradient > .vertical(@start-color: lighten(@navbar-inverse-bg, 10%); @end-color: @navbar-inverse-bg);
-  .reset-filter(); // Remove gradient in IE<10 to fix bug where dropdowns don't get triggered; see https://github.com/twbs/bootstrap/issues/10257
-  border-radius: @navbar-border-radius;
-  .navbar-nav > .open > a,
-  .navbar-nav > .active > a {
-    #gradient > .vertical(@start-color: @navbar-inverse-link-active-bg; @end-color: lighten(@navbar-inverse-link-active-bg, 2.5%));
-    .box-shadow(inset 0 3px 9px rgba(0,0,0,.25));
-  }
-
-  .navbar-brand,
-  .navbar-nav > li > a {
-    text-shadow: 0 -1px 0 rgba(0,0,0,.25);
-  }
+  .navbar-theme-inverse-variant(@navbar-inverse-bg;@navbar-inverse-link-active-bg;@navbar-inverse-link-hover-bg);
 }
-
+.navbar-primary-inverse {
+  .navbar-theme-inverse-variant(@navbar-primary-inverse-bg;@navbar-primary-inverse-link-active-bg;@navbar-primary-inverse-link-hover-bg);
+}
+.navbar-success-inverse {
+  .navbar-theme-inverse-variant(@navbar-success-inverse-bg;@navbar-success-inverse-link-active-bg;@navbar-success-link-hover-bg);
+}
+.navbar-info-inverse {
+  .navbar-theme-inverse-variant(@navbar-info-inverse-bg;@navbar-info-inverse-link-active-bg;@navbar-info-inverse-link-hover-bg);
+}
+.navbar-warning-inverse {
+  .navbar-theme-inverse-variant(@navbar-warning-inverse-bg;@navbar-warning-inverse-link-active-bg;@navbar-warning-inverse-link-hover-bg);
+}
+.navbar-danger-inverse {
+  .navbar-theme-inverse-variant(@navbar-danger-inverse-bg;@navbar-danger-inverse-link-active-bg;@navbar-danger-inverse-link-hover-bg);
+}
 // Undo rounded corners in static and fixed navbars
 .navbar-static-top,
 .navbar-fixed-top,

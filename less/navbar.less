@@ -393,268 +393,89 @@
 
 // Default navbar
 .navbar-default {
-  background-color: @navbar-default-bg;
-  border-color: @navbar-default-border;
-
-  .navbar-brand {
-    color: @navbar-default-brand-color;
-    &:hover,
-    &:focus {
-      color: @navbar-default-brand-hover-color;
-      background-color: @navbar-default-brand-hover-bg;
-    }
-  }
-
-  .navbar-text {
-    color: @navbar-default-color;
-  }
-
-  .navbar-nav {
-    > li > a {
-      color: @navbar-default-link-color;
-
-      &:hover,
-      &:focus {
-        color: @navbar-default-link-hover-color;
-        background-color: @navbar-default-link-hover-bg;
-      }
-    }
-    > .active > a {
-      &,
-      &:hover,
-      &:focus {
-        color: @navbar-default-link-active-color;
-        background-color: @navbar-default-link-active-bg;
-      }
-    }
-    > .disabled > a {
-      &,
-      &:hover,
-      &:focus {
-        color: @navbar-default-link-disabled-color;
-        background-color: @navbar-default-link-disabled-bg;
-      }
-    }
-  }
-
-  .navbar-toggle {
-    border-color: @navbar-default-toggle-border-color;
-    &:hover,
-    &:focus {
-      background-color: @navbar-default-toggle-hover-bg;
-    }
-    .icon-bar {
-      background-color: @navbar-default-toggle-icon-bar-bg;
-    }
-  }
-
-  .navbar-collapse,
-  .navbar-form {
-    border-color: @navbar-default-border;
-  }
-
-  // Dropdown menu items
-  .navbar-nav {
-    // Remove background color from open dropdown
-    > .open > a {
-      &,
-      &:hover,
-      &:focus {
-        background-color: @navbar-default-link-active-bg;
-        color: @navbar-default-link-active-color;
-      }
-    }
-
-    @media (max-width: @grid-float-breakpoint-max) {
-      // Dropdowns get custom display when collapsed
-      .open .dropdown-menu {
-        > li > a {
-          color: @navbar-default-link-color;
-          &:hover,
-          &:focus {
-            color: @navbar-default-link-hover-color;
-            background-color: @navbar-default-link-hover-bg;
-          }
-        }
-        > .active > a {
-          &,
-          &:hover,
-          &:focus {
-            color: @navbar-default-link-active-color;
-            background-color: @navbar-default-link-active-bg;
-          }
-        }
-        > .disabled > a {
-          &,
-          &:hover,
-          &:focus {
-            color: @navbar-default-link-disabled-color;
-            background-color: @navbar-default-link-disabled-bg;
-          }
-        }
-      }
-    }
-  }
-
-
-  // Links in navbars
-  //
-  // Add a class to ensure links outside the navbar nav are colored correctly.
-
-  .navbar-link {
-    color: @navbar-default-link-color;
-    &:hover {
-      color: @navbar-default-link-hover-color;
-    }
-  }
-
-  .btn-link {
-    color: @navbar-default-link-color;
-    &:hover,
-    &:focus {
-      color: @navbar-default-link-hover-color;
-    }
-    &[disabled],
-    fieldset[disabled] & {
-      &:hover,
-      &:focus {
-        color: @navbar-default-link-disabled-color;
-      }
-    }
-  }
+  .navbar-variant(@navbar-default-bg;@navbar-default-border;@navbar-default-brand-color;@navbar-default-brand-hover-color;@navbar-default-brand-hover-bg;@navbar-default-color;
+    @navbar-default-link-color;@navbar-default-link-hover-color;@navbar-default-link-hover-bg;@navbar-default-link-active-color;@navbar-default-link-active-bg;
+    @navbar-default-link-disabled-color;@navbar-default-link-disabled-bg;@navbar-default-toggle-border-color;@navbar-default-toggle-hover-bg;@navbar-default-toggle-icon-bar-bg;@navbar-default-toggle-icon-bar-hover-bg);
 }
 
 // Inverse navbar
 
 .navbar-inverse {
-  background-color: @navbar-inverse-bg;
-  border-color: @navbar-inverse-border;
+  .navbar-variant(@navbar-inverse-bg;@navbar-inverse-border;@navbar-inverse-brand-color;@navbar-inverse-brand-hover-color;@navbar-inverse-brand-hover-bg;@navbar-inverse-color;
+    @navbar-inverse-link-color;@navbar-inverse-link-hover-color;@navbar-inverse-link-hover-bg;@navbar-inverse-link-active-color;@navbar-inverse-link-active-bg;
+    @navbar-inverse-link-disabled-color;@navbar-inverse-link-disabled-bg;@navbar-inverse-toggle-border-color;@navbar-inverse-toggle-hover-bg;@navbar-inverse-toggle-icon-bar-bg;@navbar-inverse-toggle-icon-bar-hover-bg);
+}
 
-  .navbar-brand {
-    color: @navbar-inverse-brand-color;
-    &:hover,
-    &:focus {
-      color: @navbar-inverse-brand-hover-color;
-      background-color: @navbar-inverse-brand-hover-bg;
-    }
-  }
+// Primary navbar
+.navbar-primary {
+  .navbar-variant(@navbar-primary-bg;@navbar-primary-border;@navbar-primary-brand-color;@navbar-primary-brand-hover-color;@navbar-primary-brand-hover-bg;@navbar-primary-color;
+    @navbar-primary-link-color;@navbar-primary-link-hover-color;@navbar-primary-link-hover-bg;@navbar-primary-link-active-color;@navbar-primary-link-active-bg;
+    @navbar-primary-link-disabled-color;@navbar-primary-link-disabled-bg;@navbar-primary-toggle-border-color;@navbar-primary-toggle-hover-bg;@navbar-primary-toggle-icon-bar-bg;@navbar-primary-toggle-icon-bar-hover-bg);
+}
 
-  .navbar-text {
-    color: @navbar-inverse-color;
-  }
+// Primary Inverse navbar
+.navbar-primary-inverse {
+  .navbar-variant(@navbar-primary-inverse-bg;@navbar-primary-inverse-border;@navbar-primary-inverse-brand-color;@navbar-primary-inverse-brand-hover-color;@navbar-primary-inverse-brand-hover-bg;@navbar-primary-inverse-color;
+    @navbar-primary-inverse-link-color;@navbar-primary-inverse-link-hover-color;@navbar-primary-inverse-link-hover-bg;@navbar-primary-inverse-link-active-color;@navbar-primary-inverse-link-active-bg;
+    @navbar-primary-inverse-link-disabled-color;@navbar-primary-inverse-link-disabled-bg;@navbar-primary-inverse-toggle-border-color;@navbar-primary-inverse-toggle-hover-bg;@navbar-primary-inverse-toggle-icon-bar-bg;@navbar-primary-inverse-toggle-icon-bar-hover-bg);
+}
 
-  .navbar-nav {
-    > li > a {
-      color: @navbar-inverse-link-color;
+// Success navbar
+.navbar-success {
+  .navbar-variant(@navbar-success-bg;@navbar-success-border;@navbar-success-brand-color;@navbar-success-brand-hover-color;@navbar-success-brand-hover-bg;@navbar-success-color;
+    @navbar-success-link-color;@navbar-success-link-hover-color;@navbar-success-link-hover-bg;@navbar-success-link-active-color;@navbar-success-link-active-bg;
+    @navbar-success-link-disabled-color;@navbar-success-link-disabled-bg;@navbar-success-toggle-border-color;@navbar-success-toggle-hover-bg;@navbar-success-toggle-icon-bar-bg;@navbar-success-toggle-icon-bar-hover-bg);
+}
 
-      &:hover,
-      &:focus {
-        color: @navbar-inverse-link-hover-color;
-        background-color: @navbar-inverse-link-hover-bg;
-      }
-    }
-    > .active > a {
-      &,
-      &:hover,
-      &:focus {
-        color: @navbar-inverse-link-active-color;
-        background-color: @navbar-inverse-link-active-bg;
-      }
-    }
-    > .disabled > a {
-      &,
-      &:hover,
-      &:focus {
-        color: @navbar-inverse-link-disabled-color;
-        background-color: @navbar-inverse-link-disabled-bg;
-      }
-    }
-  }
+// Success Inverse navbar
 
-  // Darken the responsive nav toggle
-  .navbar-toggle {
-    border-color: @navbar-inverse-toggle-border-color;
-    &:hover,
-    &:focus {
-      background-color: @navbar-inverse-toggle-hover-bg;
-    }
-    .icon-bar {
-      background-color: @navbar-inverse-toggle-icon-bar-bg;
-    }
-  }
+.navbar-success-inverse {
+  .navbar-variant(@navbar-success-inverse-bg;@navbar-success-inverse-border;@navbar-success-inverse-brand-color;@navbar-success-inverse-brand-hover-color;@navbar-success-inverse-brand-hover-bg;@navbar-success-inverse-color;
+    @navbar-success-inverse-link-color;@navbar-success-inverse-link-hover-color;@navbar-success-inverse-link-hover-bg;@navbar-success-inverse-link-active-color;@navbar-success-inverse-link-active-bg;
+    @navbar-success-inverse-link-disabled-color;@navbar-success-inverse-link-disabled-bg;@navbar-success-inverse-toggle-border-color;@navbar-success-inverse-toggle-hover-bg;@navbar-success-inverse-toggle-icon-bar-bg;@navbar-success-inverse-toggle-icon-bar-hover-bg);
+}
 
-  .navbar-collapse,
-  .navbar-form {
-    border-color: darken(@navbar-inverse-bg, 7%);
-  }
+// Info navbar
+.navbar-info {
+  .navbar-variant(@navbar-info-bg;@navbar-info-border;@navbar-info-brand-color;@navbar-info-brand-hover-color;@navbar-info-brand-hover-bg;@navbar-info-color;
+    @navbar-info-link-color;@navbar-info-link-hover-color;@navbar-info-link-hover-bg;@navbar-info-link-active-color;@navbar-info-link-active-bg;
+    @navbar-info-link-disabled-color;@navbar-info-link-disabled-bg;@navbar-info-toggle-border-color;@navbar-info-toggle-hover-bg;@navbar-info-toggle-icon-bar-bg;@navbar-info-toggle-icon-bar-hover-bg);
+}
 
-  // Dropdowns
-  .navbar-nav {
-    > .open > a {
-      &,
-      &:hover,
-      &:focus {
-        background-color: @navbar-inverse-link-active-bg;
-        color: @navbar-inverse-link-active-color;
-      }
-    }
+// Info Inverse navbar
 
-    @media (max-width: @grid-float-breakpoint-max) {
-      // Dropdowns get custom display
-      .open .dropdown-menu {
-        > .dropdown-header {
-          border-color: @navbar-inverse-border;
-        }
-        .divider {
-          background-color: @navbar-inverse-border;
-        }
-        > li > a {
-          color: @navbar-inverse-link-color;
-          &:hover,
-          &:focus {
-            color: @navbar-inverse-link-hover-color;
-            background-color: @navbar-inverse-link-hover-bg;
-          }
-        }
-        > .active > a {
-          &,
-          &:hover,
-          &:focus {
-            color: @navbar-inverse-link-active-color;
-            background-color: @navbar-inverse-link-active-bg;
-          }
-        }
-        > .disabled > a {
-          &,
-          &:hover,
-          &:focus {
-            color: @navbar-inverse-link-disabled-color;
-            background-color: @navbar-inverse-link-disabled-bg;
-          }
-        }
-      }
-    }
-  }
+.navbar-info-inverse {
+  .navbar-variant(@navbar-info-inverse-bg;@navbar-info-inverse-border;@navbar-info-inverse-brand-color;@navbar-info-inverse-brand-hover-color;@navbar-info-inverse-brand-hover-bg;@navbar-info-inverse-color;
+    @navbar-info-inverse-link-color;@navbar-info-inverse-link-hover-color;@navbar-info-inverse-link-hover-bg;@navbar-info-inverse-link-active-color;@navbar-info-inverse-link-active-bg;
+    @navbar-info-inverse-link-disabled-color;@navbar-info-inverse-link-disabled-bg;@navbar-info-inverse-toggle-border-color;@navbar-info-inverse-toggle-hover-bg;@navbar-info-inverse-toggle-icon-bar-bg;@navbar-info-inverse-toggle-icon-bar-hover-bg);
+}
 
-  .navbar-link {
-    color: @navbar-inverse-link-color;
-    &:hover {
-      color: @navbar-inverse-link-hover-color;
-    }
-  }
+// Warning navbar
+.navbar-warning {
+  .navbar-variant(@navbar-warning-bg;@navbar-warning-border;@navbar-warning-brand-color;@navbar-warning-brand-hover-color;@navbar-warning-brand-hover-bg;@navbar-warning-color;
+    @navbar-warning-link-color;@navbar-warning-link-hover-color;@navbar-warning-link-hover-bg;@navbar-warning-link-active-color;@navbar-warning-link-active-bg;
+    @navbar-warning-link-disabled-color;@navbar-warning-link-disabled-bg;@navbar-warning-toggle-border-color;@navbar-warning-toggle-hover-bg;@navbar-warning-toggle-icon-bar-bg;@navbar-warning-toggle-icon-bar-hover-bg);
+}
 
-  .btn-link {
-    color: @navbar-inverse-link-color;
-    &:hover,
-    &:focus {
-      color: @navbar-inverse-link-hover-color;
-    }
-    &[disabled],
-    fieldset[disabled] & {
-      &:hover,
-      &:focus {
-        color: @navbar-inverse-link-disabled-color;
-      }
-    }
-  }
+// Warning Inverse navbar
+
+.navbar-warning-inverse {
+  .navbar-variant(@navbar-warning-inverse-bg;@navbar-warning-inverse-border;@navbar-warning-inverse-brand-color;@navbar-warning-inverse-brand-hover-color;@navbar-warning-inverse-brand-hover-bg;@navbar-warning-inverse-color;
+    @navbar-warning-inverse-link-color;@navbar-warning-inverse-link-hover-color;@navbar-warning-inverse-link-hover-bg;@navbar-warning-inverse-link-active-color;@navbar-warning-inverse-link-active-bg;
+    @navbar-warning-inverse-link-disabled-color;@navbar-warning-inverse-link-disabled-bg;@navbar-warning-inverse-toggle-border-color;@navbar-warning-inverse-toggle-hover-bg;@navbar-warning-inverse-toggle-icon-bar-bg;@navbar-warning-inverse-toggle-icon-bar-hover-bg);
+}
+
+// Danger navbar
+.navbar-danger {
+  .navbar-variant(@navbar-danger-bg;@navbar-danger-border;@navbar-danger-brand-color;@navbar-danger-brand-hover-color;@navbar-danger-brand-hover-bg;@navbar-danger-color;
+    @navbar-danger-link-color;@navbar-danger-link-hover-color;@navbar-danger-link-hover-bg;@navbar-danger-link-active-color;@navbar-danger-link-active-bg;
+    @navbar-danger-link-disabled-color;@navbar-danger-link-disabled-bg;@navbar-danger-toggle-border-color;@navbar-danger-toggle-hover-bg;@navbar-danger-toggle-icon-bar-bg;@navbar-danger-toggle-icon-bar-hover-bg);
+}
+
+// Danger Inverse navbar
+
+.navbar-danger-inverse {
+  .navbar-variant(@navbar-danger-inverse-bg;@navbar-danger-inverse-border;@navbar-danger-inverse-brand-color;@navbar-danger-inverse-brand-hover-color;@navbar-danger-inverse-brand-hover-bg;@navbar-danger-inverse-color;
+    @navbar-danger-inverse-link-color;@navbar-danger-inverse-link-hover-color;@navbar-danger-inverse-link-hover-bg;@navbar-danger-inverse-link-active-color;@navbar-danger-inverse-link-active-bg;
+    @navbar-danger-inverse-link-disabled-color;@navbar-danger-inverse-link-disabled-bg;@navbar-danger-inverse-toggle-border-color;@navbar-danger-inverse-toggle-hover-bg;@navbar-danger-inverse-toggle-icon-bar-bg;@navbar-danger-inverse-toggle-icon-bar-hover-bg);
 }

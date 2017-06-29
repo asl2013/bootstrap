@@ -1,0 +1,259 @@
+.navbar-variant(@navbar-bg;@navbar-border;@navbar-brand-color;@navbar-brand-hover-color;@navbar-brand-hover-bg;@navbar-color;
+@navbar-link-color;@navbar-link-hover-color;@navbar-link-hover-bg;@navbar-link-active-color;@navbar-link-active-bg;
+@navbar-link-disabled-color;@navbar-link-disabled-bg;@navbar-toggle-border-color;@navbar-toggle-hover-bg;@navbar-toggle-icon-bar-bg;
+@navbar-toggle-icon-bar-hover-bg){
+  background-color: @navbar-bg;
+  border-color: @navbar-border;
+
+  .navbar-brand {
+    color: @navbar-brand-color;
+    &:hover,
+    &:focus {
+      color: @navbar-brand-hover-color;
+      background-color: @navbar-brand-hover-bg;
+    }
+  }
+
+  .navbar-text {
+    color: @navbar-color;
+  }
+
+  .navbar-nav {
+    > li > a {
+      color: @navbar-link-color;
+
+      &:hover,
+      &:focus {
+        color: @navbar-link-hover-color;
+        background-color: @navbar-link-hover-bg;
+      }
+    }
+    > .active > a {
+      &,
+      &:hover,
+      &:focus {
+        color: @navbar-link-active-color;
+        background-color: @navbar-link-active-bg;
+      }
+    }
+    > .disabled > a {
+      &,
+      &:hover,
+      &:focus {
+        color: @navbar-link-disabled-color;
+        background-color: @navbar-link-disabled-bg;
+      }
+    }
+  }
+
+  .dropdown-menu{
+    background-color:@navbar-bg;
+    border-color:@navbar-border;
+    > li{
+      &:not(.disabled):not(.active){
+        > a{
+          color:@navbar-link-color;
+          &:focus,&:hover{
+            background-color:@navbar-link-hover-bg;
+            color:@navbar-link-hover-color;
+          }
+        }
+      }
+      &.disabled{
+        > a{
+          color:@navbar-link-disabled-color;
+        }
+      }
+    }
+    .divider{
+      background-color:@navbar-border;
+    }
+    > .active{
+      > a{
+        &,
+        &:hover,
+        &:focus{
+          background-color:@navbar-link-active-bg;
+          color:@navbar-link-active-color;
+        }
+      }
+    }
+  }
+
+  .navbar-toggle {
+    border-color: @navbar-toggle-border-color;
+    &:hover,
+    &:focus {
+      background-color: @navbar-toggle-hover-bg;
+      .icon-bar{
+        background-color:@navbar-toggle-icon-bar-hover-bg;
+      }
+    }
+    .icon-bar {
+      background-color: @navbar-toggle-icon-bar-bg;
+    }
+  }
+
+  .navbar-collapse,
+  .navbar-form {
+    border-color: @navbar-border;
+  }
+
+  // Dropdown menu items
+  .navbar-nav {
+    // Remove background color from open dropdown
+    > .open > a {
+      &,
+      &:hover,
+      &:focus {
+        background-color: @navbar-link-active-bg;
+        color: @navbar-link-active-color;
+      }
+    }
+
+    @media (max-width: @grid-float-breakpoint-max) {
+      // Dropdowns get custom display when collapsed
+      .open .dropdown-menu {
+        > li > a {
+          color: @navbar-link-color;
+          &:hover,
+          &:focus {
+            color: @navbar-link-hover-color;
+            background-color: @navbar-link-hover-bg;
+          }
+        }
+        > .active > a {
+          &,
+          &:hover,
+          &:focus {
+            color: @navbar-link-active-color;
+            background-color: @navbar-link-active-bg;
+          }
+        }
+        > .disabled > a {
+          &,
+          &:hover,
+          &:focus {
+            color: @navbar-link-disabled-color;
+            background-color: @navbar-link-disabled-bg;
+          }
+        }
+      }
+    }
+  }
+
+
+  // Links in navbars
+  //
+  // Add a class to ensure links outside the navbar nav are colored correctly.
+
+  .navbar-link {
+    color: @navbar-link-color;
+    &:hover {
+      color: @navbar-link-hover-color;
+    }
+  }
+
+  .btn-link {
+    color: @navbar-link-color;
+    &:hover,
+    &:focus {
+      color: @navbar-link-hover-color;
+    }
+    &[disabled],
+    fieldset[disabled] & {
+      &:hover,
+      &:focus {
+        color: @navbar-link-disabled-color;
+      }
+    }
+  }
+}
+
+.navbar-theme-variant(@navbar-bg;@navbar-link-active-bg;@navbar-link-hover-bg){
+  #gradient > .vertical(@start-color: lighten(@navbar-bg, 10%); @end-color: @navbar-bg);
+  > li > a {
+    &:hover,
+    &:focus {
+      #gradient > .vertical(@start-color: lighten(@navbar-link-hover-bg, 10%); @end-color: @navbar-link-hover-bg);
+    }
+  }
+  .reset-filter(); // Remove gradient in IE<10 to fix bug where dropdowns don't get triggered
+  border-radius: @navbar-border-radius;
+  @shadow: inset 0 1px 0 rgba(255,255,255,.15), 0 1px 5px rgba(0,0,0,.075);
+  .box-shadow(@shadow);
+
+  .navbar-nav > .open > a,
+  .navbar-nav > .active > a {
+    #gradient > .vertical(@start-color: darken(@navbar-link-active-bg, 5%); @end-color: darken(@navbar-link-active-bg, 2%));
+    .box-shadow(inset 0 2px 2px rgba(0,0,0,.075));
+  }
+
+  .dropdown-menu{
+    > li{
+      &:not(.disabled):not(.active){
+        > a{
+          &:focus,&:hover{
+            #gradient > .vertical(@start-color: @navbar-link-hover-bg; @end-color: darken(@navbar-link-hover-bg, 5%));
+            background-color: darken(@navbar-link-hover-bg, 5%);
+          }
+        }
+      }
+    }
+    > .active{
+      > a{
+        &,
+        &:hover,
+        &:focus{
+          #gradient > .vertical(@start-color: @navbar-link-active-bg; @end-color: darken(@navbar-link-active-bg, 5%));
+          background-color: darken(@navbar-link-active-bg, 5%);
+        }
+      }
+    }
+  }
+}
+
+.navbar-theme-inverse-variant(@navbar-bg;@navbar-link-active-bg;@navbar-link-hover-bg){
+  #gradient > .vertical(@start-color: lighten(@navbar-bg, 10%); @end-color: @navbar-bg);
+  > li > a {
+    &:hover,
+    &:focus {
+      #gradient > .vertical(@start-color: lighten(@navbar-link-hover-bg, 10%); @end-color: @navbar-link-hover-bg);
+    }
+  }
+  .reset-filter(); // Remove gradient in IE<10 to fix bug where dropdowns don't get triggered; see https://github.com/twbs/bootstrap/issues/10257
+  border-radius: @navbar-border-radius;
+  .navbar-nav > .open > a,
+  .navbar-nav > .active > a {
+    #gradient > .vertical(@start-color: @navbar-link-active-bg; @end-color: lighten(@navbar-link-active-bg, 2.5%));
+    .box-shadow(inset 0 2px 2px rgba(0,0,0,.25));
+  }
+
+  .navbar-brand,
+  .navbar-nav > li > a {
+    text-shadow: 0 -1px 0 rgba(0,0,0,.25);
+  }
+
+  .dropdown-menu{
+    > li{
+      &:not(.disabled):not(.active){
+        > a{
+          &:focus,&:hover{
+            #gradient > .vertical(@start-color: @navbar-link-hover-bg; @end-color: darken(@navbar-link-hover-bg, 5%));
+            background-color: darken(@navbar-link-hover-bg, 5%);
+          }
+        }
+      }
+    }
+    > .active{
+      > a{
+        &,
+        &:hover,
+        &:focus{
+          #gradient > .vertical(@start-color: @navbar-link-active-bg; @end-color: darken(@navbar-link-active-bg, 5%));
+          background-color: darken(@navbar-link-active-bg, 5%);
+        }
+      }
+    }
+  }
+}
